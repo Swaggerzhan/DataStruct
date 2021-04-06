@@ -8,88 +8,88 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/swagger/CLionProjects/DataStruct/cmake-build-debug"/>
+				<Option working_dir="/Users/zhiyi/CLionProjects/DataStruct/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/swagger/CLionProjects/DataStruct/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/swagger/CLionProjects/DataStruct/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/swagger/CLionProjects/DataStruct/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/swagger/CLionProjects/DataStruct/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/zhiyi/CLionProjects/DataStruct/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/zhiyi/CLionProjects/DataStruct/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/zhiyi/CLionProjects/DataStruct/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/zhiyi/CLionProjects/DataStruct/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/swagger/CLionProjects/DataStruct/cmake-build-debug"/>
+				<Option working_dir="/Users/zhiyi/CLionProjects/DataStruct/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/swagger/CLionProjects/DataStruct/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/swagger/CLionProjects/DataStruct/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/swagger/CLionProjects/DataStruct/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/swagger/CLionProjects/DataStruct/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/zhiyi/CLionProjects/DataStruct/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/zhiyi/CLionProjects/DataStruct/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/zhiyi/CLionProjects/DataStruct/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/zhiyi/CLionProjects/DataStruct/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/swagger/CLionProjects/DataStruct/cmake-build-debug"/>
+				<Option working_dir="/Users/zhiyi/CLionProjects/DataStruct/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/swagger/CLionProjects/DataStruct/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/swagger/CLionProjects/DataStruct/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/swagger/CLionProjects/DataStruct/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/swagger/CLionProjects/DataStruct/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/zhiyi/CLionProjects/DataStruct/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/zhiyi/CLionProjects/DataStruct/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/zhiyi/CLionProjects/DataStruct/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/zhiyi/CLionProjects/DataStruct/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="DataStruct">
-				<Option output="/Users/swagger/CLionProjects/DataStruct/cmake-build-debug/DataStruct" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/swagger/CLionProjects/DataStruct/cmake-build-debug"/>
+				<Option output="/Users/zhiyi/CLionProjects/DataStruct/cmake-build-debug/DataStruct" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/zhiyi/CLionProjects/DataStruct/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
 					<Add directory="/System/Library/Frameworks"/>
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/swagger/CLionProjects/DataStruct/cmake-build-debug/Makefile&quot;  VERBOSE=1 DataStruct"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/swagger/CLionProjects/DataStruct/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/swagger/CLionProjects/DataStruct/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/swagger/CLionProjects/DataStruct/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/zhiyi/CLionProjects/DataStruct/cmake-build-debug/Makefile&quot;  VERBOSE=1 DataStruct"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/zhiyi/CLionProjects/DataStruct/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/zhiyi/CLionProjects/DataStruct/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/zhiyi/CLionProjects/DataStruct/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="DataStruct/fast">
-				<Option output="/Users/swagger/CLionProjects/DataStruct/cmake-build-debug/DataStruct" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/swagger/CLionProjects/DataStruct/cmake-build-debug"/>
+				<Option output="/Users/zhiyi/CLionProjects/DataStruct/cmake-build-debug/DataStruct" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/zhiyi/CLionProjects/DataStruct/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
 					<Add directory="/System/Library/Frameworks"/>
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/swagger/CLionProjects/DataStruct/cmake-build-debug/Makefile&quot;  VERBOSE=1 DataStruct/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/swagger/CLionProjects/DataStruct/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/swagger/CLionProjects/DataStruct/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/swagger/CLionProjects/DataStruct/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/zhiyi/CLionProjects/DataStruct/cmake-build-debug/Makefile&quot;  VERBOSE=1 DataStruct/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/zhiyi/CLionProjects/DataStruct/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/zhiyi/CLionProjects/DataStruct/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/zhiyi/CLionProjects/DataStruct/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/swagger/CLionProjects/DataStruct/Tree/BinaryTree.h">
+		<Unit filename="/Users/zhiyi/CLionProjects/DataStruct/Tree/BinaryTree.h">
 			<Option target="DataStruct"/>
 		</Unit>
-		<Unit filename="/Users/swagger/CLionProjects/DataStruct/Tree/Tree_test.h">
+		<Unit filename="/Users/zhiyi/CLionProjects/DataStruct/Tree/Tree_test.h">
 			<Option target="DataStruct"/>
 		</Unit>
-		<Unit filename="/Users/swagger/CLionProjects/DataStruct/main.cpp">
+		<Unit filename="/Users/zhiyi/CLionProjects/DataStruct/main.cpp">
 			<Option target="DataStruct"/>
 		</Unit>
-		<Unit filename="/Users/swagger/CLionProjects/DataStruct/CMakeLists.txt">
+		<Unit filename="/Users/zhiyi/CLionProjects/DataStruct/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

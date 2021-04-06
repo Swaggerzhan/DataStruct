@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/swagger/CLionProjects/DataStruct/main.cpp" "/Users/swagger/CLionProjects/DataStruct/cmake-build-debug/CMakeFiles/DataStruct.dir/main.cpp.o"
+  "/Users/zhiyi/CLionProjects/DataStruct/main.cpp" "/Users/zhiyi/CLionProjects/DataStruct/cmake-build-debug/CMakeFiles/DataStruct.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
