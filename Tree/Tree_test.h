@@ -34,6 +34,11 @@ void tree_test(){
         printf("22 values is %d\n", *value);
     }
 
+    tree.levelOrder();
+    int max = tree.max();
+    int min = tree.min();
+    printf("Tree's min key is %d\nTree's max key is %d\n", min, max);
+
 
 }
 
