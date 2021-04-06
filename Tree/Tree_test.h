@@ -27,6 +27,14 @@ void tree_test(){
 
     tree.inOrder();
 
+    bool is_22_exist = tree.contain(22);
+    if (is_22_exist){
+        printf("yes\n");
+        int* value = tree.search(22);
+        printf("22 values is %d\n", *value);
+    }
+
+
 }
 
 

@@ -68,10 +68,60 @@ public:
 
 
     void preOrder(){ preOrder(root); }
-    void inOrder(){ inOrder(root); }
+    void inOrder(){ inOrder(root); cout<<endl;}
     void posOrder(){ posOrder(root); }
 
+
+    /**
+     * 给定一个key判断树中是否存在这个节点
+     * @param key
+     * @return
+     */
+    bool contain(Key key){
+        return contain(root, key);
+    }
+
+    /**
+     * 给定一个key，返回树中这个key对应的value
+     * 由于这个节点可能不存在，所以直接返回value的指针，当然也可以先使用contain判断是否存在再取值
+     * @param key
+     * @return
+     */
+    Value* search(Key key){
+        return search(root, key);
+    }
+
 private:
+
+    Value* search(Node* node, Key key){
+
+        /* search的方法和contain相似 */
+        if ( node == nullptr )
+            return nullptr;
+        else if (node->key == key)
+            return &(node->value);
+        else if (key < node->key)
+            return search(node->left, key);
+        else
+            return search(node->right, key);
+
+    }
+
+
+    bool contain(Node* node, Key key){
+        /* 这种和insert方法是有些许不同的
+         * contain不需要将最底层的递归结果返回给上层，所以可以直接return
+         * */
+        if (node == nullptr )
+            return false;
+        else if (node->key == key)
+            return true;
+        else if (key < node->key )
+            return contain(node->left, key);
+        else
+            return contain(node->right, key);
+
+    }
 
     void preOrder(Node* node){
         if (node != nullptr){
@@ -84,9 +134,10 @@ private:
     void inOrder(Node* node){
         if (node != nullptr ){
             inOrder(node->left);
-            cout << node->key << endl;
+            cout << node->key << " ";
             inOrder(node->right);
         }
+
     }
 
     void posOrder(Node* node){
