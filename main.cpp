@@ -1,6 +1,7 @@
-#include <iostream>
+#include "Tree/Tree_test.h"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
+    tree_test();
+
+
 }
