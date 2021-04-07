@@ -6,6 +6,18 @@
 
 #IncludeRegexTransform: 
 
+/Users/zhiyi/CLionProjects/DataStruct/Sort/SortTestHelper.h
+iostream
+-
+cstring
+-
+ctime
+-
+mergeSort.h
+/Users/zhiyi/CLionProjects/DataStruct/Sort/mergeSort.h
+
+/Users/zhiyi/CLionProjects/DataStruct/Sort/mergeSort.h
+
 /Users/zhiyi/CLionProjects/DataStruct/Tree/BinaryTree.h
 iostream
 -
@@ -21,4 +33,6 @@ ctime
 /Users/zhiyi/CLionProjects/DataStruct/main.cpp
 Tree/Tree_test.h
 /Users/zhiyi/CLionProjects/DataStruct/Tree/Tree_test.h
+Sort/SortTestHelper.h
+/Users/zhiyi/CLionProjects/DataStruct/Sort/SortTestHelper.h
 

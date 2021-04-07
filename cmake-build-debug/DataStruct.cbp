@@ -80,6 +80,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/zhiyi/CLionProjects/DataStruct/Sort/SortTestHelper.h">
+			<Option target="DataStruct"/>
+		</Unit>
+		<Unit filename="/Users/zhiyi/CLionProjects/DataStruct/Sort/mergeSort.h">
+			<Option target="DataStruct"/>
+		</Unit>
 		<Unit filename="/Users/zhiyi/CLionProjects/DataStruct/Tree/BinaryTree.h">
 			<Option target="DataStruct"/>
 		</Unit>
