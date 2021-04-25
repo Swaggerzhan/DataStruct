@@ -3,6 +3,12 @@ project(DataStruct)
 
 set(CMAKE_CXX_STANDARD 14)
 
+set(CMAKE_BUILD_TYPE debug)
 
-add_executable(DataStruct main.cpp Tree/BinaryTree.h Tree/Tree_test.h Sort/mergeSort.h Sort/SortTestHelper.h Union/Union1.h Union/UnionTest.h Union/Union2.h Union/Union3.h)
+add_executable(DataStruct main.cpp Tree/BinaryTree.h
+        Tree/Tree_test.h Sort/mergeSort.h
+        Sort/SortTestHelper.h
+        Union/Union1.h Union/UnionTest.h Union/Union2.h Union/Union3.h
+        LeetCode/146_LRU.h
+        )
 

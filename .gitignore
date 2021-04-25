@@ -1,5 +1,4 @@
-<<<<<<< HEAD
 cmake-build-debug-system/
-=======
+.idea/
 cmake-build-debug/
->>>>>>> 9c50e83792841601d2edc28e038dec8fa3d9fa64
+cmake-build-debug-new_linux_agent/
