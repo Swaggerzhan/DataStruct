@@ -15,5 +15,9 @@ add_executable(DataStruct main.cpp
         LeetCode/21_mergeLinkList.h
         LeetCode/160_getIntersectionNode.h
         LeetCode/141_hasCycle.h
-        LeetCode/111_minDepth.h LeetCode/101_isSymmetric.h)
+        LeetCode/111_minDepth.h LeetCode/101_isSymmetric.h
+        LeetCode/92_reverLinkList2.h
+        LeetCode/415_addStrings.h
+
+        )
 

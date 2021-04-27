@@ -1,12 +1,15 @@
 #include "Tree/Tree_test.h"
 #include "Sort/SortTestHelper.h"
-#include "LeetCode/101_isSymmetric.h"
+#include "LeetCode/92_reverLinkList2.h"
 
 int main() {
 
     Solution s;
-    TreeNode* root = test_case_101();
 
-    cout << s.isSymmetric(root) << endl;
+    int arr[] = {1, 2, 3, 4, 5};
+    ListNode* head = getList(arr, 5);
+    printList(head);
+    head = s.reverseBetween(head, 4, 5);
+    printList(head);
 
 }
