@@ -1,15 +1,13 @@
 #include "Tree/Tree_test.h"
 #include "Sort/SortTestHelper.h"
-#include "LeetCode/92_reverLinkList2.h"
+#include "LeetCode/179_largetNumber.h"
 
 int main() {
 
     Solution s;
+    int x = 4;
+    int y = 54;
+    std::cout << s.cmp(&x, &y) << std::endl;
 
-    int arr[] = {1, 2, 3, 4, 5};
-    ListNode* head = getList(arr, 5);
-    printList(head);
-    head = s.reverseBetween(head, 4, 5);
-    printList(head);
 
 }
