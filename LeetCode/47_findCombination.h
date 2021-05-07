@@ -21,6 +21,7 @@ private:
 
 		for (int i=0; i<nums.size(); i++){
 
+			/* 进行剪枝操作 */
 			if ( i > 0 && nums[i] == nums[i-1] && used[i-1] == false)
 				continue;
 
