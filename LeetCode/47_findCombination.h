@@ -7,6 +7,13 @@ class Solution{
 
 private:
 
+    void print(std::vector<int>& tmp){
+        for (int i: tmp){
+            std::cout << i << " ";
+        }
+        std::cout << endl;
+    }
+
 	vector<vector<int>> ret;
 
 	vector<bool> used;
@@ -15,6 +22,7 @@ private:
 
 		if (tmp_ans.size() == nums.size()){
 			ret.push_back(tmp_ans);
+			print(tmp_ans);
 			return;
 		}
 
@@ -41,11 +49,24 @@ private:
 
 public:
 
-	vector<vector<int>> permuteUnique(vector<int>&nums){
-		used = vector<bool>(nums.size(), false);
-		vector<int> tmp_ans;
-		findCombiation(nums, tmp_ans);
-		return ret;
+	void solve(){
+	    int loop;
+	    std::cin >> loop;
+        std::vector<int> nums;
+	    for (int i=0; i<loop; i++){
+            int tmp;
+            nums.clear();
+            while (true){
+                std::cin >> tmp;
+                if (tmp == -1)
+                    break;
+                nums.push_back(tmp);
+            }
+	    }
+        used = vector<bool>(nums.size(), false);
+        vector<int> tmp_ans;
+        findCombiation(nums, tmp_ans);
+
 	}
 
 };

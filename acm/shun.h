@@ -106,7 +106,11 @@ void getOutput(){
                 break;
             data.push_back(tmp);
         }
-        std::cout << solve(data, k) << std::endl;
+
+        if (solve(data, k))
+            std::cout << "True" << std::endl;
+        else
+            std::cout << "False" << std::endl;
 
     }
 }
@@ -115,13 +119,14 @@ void getOutput(){
 void getInputOnce(int seed, int count, int k){
     srand(seed);
     vector<int> output;
-    for (int i=0; i<count; i++){
+
+    for (int i=0; i<count*k+1; i++){
         int base = rand() % 5000;
-        for (int idx=0; idx < k; idx ++){
-            output.push_back(base);
-            base ++;
-        }
+        output.push_back(base);
+        base ++;
     }
+
+
     for (int i=0; i<output.size(); i++){
         int a = rand() % output.size();
         int b = rand() % output.size();
