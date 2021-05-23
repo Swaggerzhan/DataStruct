@@ -23,5 +23,5 @@ add_executable(DataStruct main.cpp
         acm/shun.h
         LeetCode/47_findCombination.h
 
-        acm/permu.h acm/isbn.h)
+        acm/permu.h acm/isbn.h Sort/quickSort.h Sort/sortHelper.h)
 
