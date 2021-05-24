@@ -46,7 +46,44 @@ namespace sort
     }
 
 
+
+    void quickSort3Ways(std::vector<int>& arr, int l, int r){
+
+        if ( l >= r )
+            return;
+
+        std::swap(arr[l], arr[l + (rand() % (r - l + 1))]);
+        int piv = arr[l];
+        int left = l;
+        int right = r + 1;
+        int index = l + 1;
+        while (index < right){
+
+            if (arr[index] < piv){
+                std::swap(arr[left + 1], arr[index]);
+                index ++;
+                left ++;
+            }else if (arr[index] > piv){
+                std::swap(arr[right-1], arr[index]);
+                right --;
+            }else{ // arr[index] == piv
+                index ++;
+            }
+
+        }
+        std::swap(arr[index], arr[left]);
+        quickSort3Ways(arr, l, left-1);
+        quickSort3Ways(arr, right, r);
+
+    }
+
+
 };
+
+
+
+
+
 
 
 
