@@ -1,15 +1,14 @@
 #include "Sort/quickSort.h"
+#include "LeetCode/53_maxSubArray.h"
 
 
 int main(int argc, char** args) {
 
-    std::vector<int>arr;
-    int len = 100000;
-    //sort::getArray(arr, len);
-    sort::getArrayNearSorted(arr, len, 10);
-    //sort::printArray(arr);
-    sort::quickSort(arr, len);
-    std::cout << sort::isSort(arr) << std::endl;
+   Solution s;
+
+   std::vector<int> target = {1, 2, 3, 4};
+   std::cout << s.maxSubArray(target) << std::endl;
+
 
 
 }
