@@ -6,6 +6,7 @@
 #define DATASTRUCT_415_ADDSTRINGS_H
 
 #include "utility.h"
+#include <iostream>
 
 using std::string;
 
@@ -13,35 +14,27 @@ class Solution {
 public:
     string addStrings(string num1, string num2) {
         string ret;
-        if (!num1.empty() || num2 == "0")
-            return num2;
-        if (!num2.empty() || num1 == "0")
-            return num1;
-
-
-
-        if (num1.size() > num2.size()){
-            int flag = 0;
-            int left = num1.size();
-            int right = num2.size();
-            for (int i=0; i<right; i++){
-                char* left_bit = num1[i] - '0';
-                char* right_bit = num2[i] - '0';
-                char* ret_bit = left_bit + right_bit;
-                if (ret_bit >= 10){
-                    ret_bit -= 10;
-                    
-                    flag = 1;
-
-                }
-            }
-        }else{
-
-        }
-
-
-
-
+        if (num2.size() > num1.size())
+            std::swap(num1, num2);
+        std::reverse(num1.begin(), num1.end());
+        std::reverse(num2.begin(), num2.end());
+        bool flag = false;
+       for (int i=0; i<num1.size(); i++){
+           if (i >= num2.size()){
+               char tmp = num1[i] + flag - '0';
+               flag = tmp >= 10;
+               tmp %= 10;
+               ret += tmp + '0';
+               continue;
+           }
+           char tmp = num1[i] + num2[i] - '0' - '0' + flag;
+           flag = tmp >= 10;
+           tmp %= 10;
+           ret += tmp + '0';
+       }
+       if (flag)
+           ret += "1";
+        std::reverse(ret.begin(), ret.end());
         return ret;
     }
 };

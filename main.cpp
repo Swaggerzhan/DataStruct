@@ -1,14 +1,13 @@
-#include "Sort/quickSort.h"
-#include "LeetCode/53_maxSubArray.h"
+#include "LeetCode/415_addStrings.h"
 
 
 int main(int argc, char** args) {
 
-   Solution s;
 
-   std::vector<int> target = {1, 2, 3, 4};
-   std::cout << s.maxSubArray(target) << std::endl;
-
+    Solution s;
+    std::string s1 = "99";
+    std::string s2 = "9";
+    std::cout << s.addStrings(s1, s2);
 
 
 }
