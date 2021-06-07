@@ -30,9 +30,25 @@ public:
                 return false;
             }
         }
+    }
 
 
+    bool reWrite(ListNode* head){
+        if (!head)
+            return false;
 
+        ListNode* pre = head; // slow pointer
+        ListNode* nxt = head->next; // fast pointer
+        while (nxt){
+            if (pre == nxt)
+                return true;
+            pre = pre->next;
+            nxt = nxt->next;
+            if (pre == nxt)
+                return true;
+
+        }
+        return false;
     }
 };
 

@@ -56,6 +56,27 @@ public:
         return dummyHead->next;
 
     }
+
+    ListNode* reverseList(ListNode* head){
+        if (!head)
+            return nullptr;
+        if (!head->next)
+            return head;
+
+        ListNode* pre = nullptr;
+        ListNode* cur = head;
+        ListNode* nxt = head->next;
+        /* 以cur循环条件，其中留意nxt是否为空结束循环，返回pre即可 */
+        while (cur){
+            cur->next = pre;
+            pre = cur;
+            cur = nxt;
+            if (nxt)
+                nxt = nxt->next;
+        }
+        return pre;
+    }
+
 };
 
 

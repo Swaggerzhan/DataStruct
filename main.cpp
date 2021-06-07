@@ -1,13 +1,14 @@
-#include "LeetCode/415_addStrings.h"
+#include "LeetCode/92_reverLinkList2.h"
 
 
 int main(int argc, char** args) {
 
 
+    int arr[] = {1, 2, 3, 4, 5};
+    auto head = getList(arr, 5);
     Solution s;
-    std::string s1 = "99";
-    std::string s2 = "9";
-    std::cout << s.addStrings(s1, s2);
-
+    printList(head);
+    head = s.reverseList(head);
+    printList(head);
 
 }

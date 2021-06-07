@@ -24,5 +24,5 @@ add_executable(DataStruct main.cpp
         LeetCode/47_findCombination.h
         LeetCode/53_maxSubArray.h
 
-        acm/permu.h acm/isbn.h Sort/quickSort.h Sort/sortHelper.h LeetCode/912_sort.h)
+        acm/permu.h acm/isbn.h Sort/quickSort.h Sort/sortHelper.h LeetCode/912_sort.h LeetCode/1_addTwo.h)
 
