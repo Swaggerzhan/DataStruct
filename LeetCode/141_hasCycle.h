@@ -36,17 +36,16 @@ public:
     bool reWrite(ListNode* head){
         if (!head)
             return false;
-
         ListNode* pre = head; // slow pointer
         ListNode* nxt = head->next; // fast pointer
-        while (nxt){
+        while (nxt && nxt->next){
             if (pre == nxt)
                 return true;
             pre = pre->next;
             nxt = nxt->next;
             if (pre == nxt)
                 return true;
-
+            nxt = nxt->next;
         }
         return false;
     }

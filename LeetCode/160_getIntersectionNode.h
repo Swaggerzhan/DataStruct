@@ -39,23 +39,14 @@ public:
     ListNode* reWrite(ListNode* headA, ListNode* headB){
         if (!headA || !headB)
             return nullptr;
-
         ListNode* left = headA;
         ListNode* right = headB;
         /* 当left和right相同时结束，这里包括了没有相交节点情况下nullptr也是相同的 */
         while ( left != right ){
-            if (left)
-                left = left->next;
-            else
-                left = headB;
-
-            if (right)
-                right = right->next;
-            else
-                right = headA;
+            left = left ? left->next : headB;
+            right = right ? right->next : headA;
         }
         return nullptr;
-
     }
 
 

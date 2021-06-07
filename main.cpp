@@ -1,14 +1,12 @@
-#include "LeetCode/92_reverLinkList2.h"
+#include "LeetCode/3_lengthOfLongestSubstring.h"
 
 
 int main(int argc, char** args) {
 
 
-    int arr[] = {1, 2, 3, 4, 5};
-    auto head = getList(arr, 5);
     Solution s;
-    printList(head);
-    head = s.reverseList(head);
-    printList(head);
+    string s1 = "abcdefa";
+
+    std::cout << s.lengthOfLongestSubstring(s1) << std::endl;
 
 }
