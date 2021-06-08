@@ -11,40 +11,23 @@
 
 class Solution {
 public:
-    bool isSymmetric(TreeNode* root) {
-        /* 左树使用前序遍历进栈，右边树使用后续遍历进行对比 */
-        std::stack<int> s;
-        getStack(s, root->left);
-        return check(s, root->right);
 
-    }
-
-    void getStack(std::stack<int>& s, TreeNode* node){
-        if (!node){
-            s.push(-1);
-            return;
-        }
-
-        s.push(node->val);
-        getStack(s, node->left);
-        getStack(s, node->right);
-    }
-
-    bool check(std::stack<int>& s, TreeNode* node){
-        if (!node){
-            if (s.top() == -1){
-                s.pop();
-                return true;
-            }
+    bool dfs(TreeNode* left, TreeNode* right){
+        /* 都为空则直接返回true */
+        if ( !left && !right )
+            return true;
+        /* 其中一个为空那么就直接返回false */
+        if ( !left || !right )
             return false;
-        }
-        if ( check(s, node->left) && check(s, node->right) ){
-            if ( s.top() == node->val ){
-                s.pop();
-                return true;
-            }
-        }
-        return false;
+        return dfs(left->left, right->right) &&
+            dfs(left->right, right->left);
+    }
+
+
+    bool isSymmetric(TreeNode* root) {
+        if (!root)
+            return true;
+        return dfs(root->left, root->right);
     }
 };
 

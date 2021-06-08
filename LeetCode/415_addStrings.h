@@ -37,6 +37,31 @@ public:
         std::reverse(ret.begin(), ret.end());
         return ret;
     }
+
+    string reWrite(string num1, string num2) {
+        std::reverse(num1.begin(), num1.end());
+        std::reverse(num2.begin(), num2.end());
+        string res;
+        int index = 0;
+        bool flag = false;
+        int tmp = 0;
+        while ( num1[index] || num2[index]){
+            tmp += index < num1.length() ? num1[index] : '0';
+            tmp += index < num2.length() ? num2[index] : '0';
+            tmp += flag;
+            tmp -= '0';
+            tmp -= '0';
+            flag = tmp >= 10;
+            res += (tmp + '0');
+            tmp = 0;
+            index ++;
+        }
+        if ( flag )
+            res += '1';
+        std::reverse(res.begin(), res.end());
+        return res;
+    }
+
 };
 
 
