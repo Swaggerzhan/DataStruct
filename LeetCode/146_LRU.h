@@ -135,4 +135,119 @@ private:
 
 };
 
+#include <list>
+
+class LRU{
+public:
+
+    struct Node{
+
+        Node(int key, int value)
+        :   key_(key),
+            value_(value),
+            next(nullptr),
+            pre(nullptr)
+            {}
+
+        int key_;
+        int value_;
+
+        struct Node* pre;
+        struct Node* next;
+    };
+
+
+    LRU(int capacity)
+    :   capacity_(capacity),
+        size_(0)
+    {
+
+    }
+
+    int get(int key) {
+        auto it = map_.find(key);
+        if ( it == map_.end() )
+            return -1;
+        update(it->second);
+        return it->second->value_;
+    }
+
+    void put(int key, int value) {
+        if ( get(key) == -1){ // 不存在，真正的put
+            if ( size_ >= capacity_ ){
+                auto it = map_.find(tail_->key_);
+                Node* curNode = it->second;
+                Node* preNode = curNode->pre;
+                map_.erase(it);
+                size_ --;
+                /* 只有一个元素的应该没有人会搞吧? */
+                preNode->next = nullptr;
+                delete curNode;
+            }
+            size_ ++;
+            Node* node = new Node(key, value);
+            map_.insert( std::pair<int, Node*>(key, node));
+            if ( head_ ){
+                Node* tmp = head_;
+                head_ = node;
+                node->next = tmp;
+                tmp->pre = node;
+            }else {
+                head_ = node;
+                tail_ = node;
+            }
+        }else{ // 更新即可
+            auto it = map_.find(key);
+            it->second->value_ = value;
+        }
+    }
+
+private:
+
+    void update(Node* node){
+        if (node == head_ ){
+            return;
+        }
+        if (node == tail_ ){
+            Node* preNode = tail_->pre;
+            preNode->next = nullptr;
+            Node* tmp = head_;
+            head_ = node;
+            node->next = tmp;
+            tmp->pre = node;
+            return;
+        }
+        Node* preNode = node->pre;
+        Node* nextNode = node->next;
+        preNode->next = nextNode;
+        nextNode->pre = preNode;
+
+        Node* tmp = head_;
+        head_ = node;
+        node->next = tmp;
+        tmp->pre = node;
+    }
+
+
+private:
+
+    std::map<int, Node*> map_;
+
+    int capacity_;              // 总容量
+    int size_;
+
+    Node* head_;
+    Node* tail_;
+
+
+};
+
+
+
+
+
+
+
+
+
 #endif //DATASTRUCT_146_LRU_H

@@ -52,30 +52,45 @@ namespace sort
         if ( l >= r )
             return;
 
-        std::swap(arr[l], arr[l + (rand() % (r - l + 1))]);
+        int rand_piv = l + ( rand() % (r - l + 1));
+        std::swap(arr[l], arr[rand_piv]);
+
+        int lt = l;
+        int rt = r + 1;
+        int index = l;
         int piv = arr[l];
-        int left = l;
-        int right = r + 1;
-        int index = l + 1;
-        while (index < right){
 
-            if (arr[index] < piv){
-                std::swap(arr[left + 1], arr[index]);
+        while ( index < rt ){
+            /* 相等情况下直接相加即可 */
+            if ( arr[index] == piv ) {
+                index++;
+                /* arr[index]比较小 */
+            } else if ( arr[index] < piv ){
+                std::swap( arr[index], arr[lt + 1]);
+                lt ++;
                 index ++;
-                left ++;
-            }else if (arr[index] > piv){
-                std::swap(arr[right-1], arr[index]);
-                right --;
-            }else{ // arr[index] == piv
-                index ++;
+            } else { /* arr[index]比较大的情况下 */
+                std::swap( arr[index], arr[rt - 1]);
+                rt --;
             }
-
         }
-        std::swap(arr[index], arr[left]);
-        quickSort3Ways(arr, l, left-1);
-        quickSort3Ways(arr, right, r);
+
+        std::swap( arr[l], arr[lt] );
+        quickSort3Ways(arr, l, lt - 1);
+        quickSort3Ways(arr, rt, r);
 
     }
+
+
+
+
+
+
+
+
+
+
+
 
 
 };

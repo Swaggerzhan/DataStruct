@@ -31,6 +31,23 @@ public:
         }
         return len;
     }
+
+    int reWrite(string s){
+        set<char> set_;
+        int lt = 0;
+        int len = 0;
+        for (int i=0; i<s.size(); i++){
+            while ( set_.find( s[i] ) != set_.end() ){
+                set_.erase( s[lt] );
+                lt ++;
+            }
+            set_.insert( s[i] );
+            len = len > set_.size() ? len : set_.size();
+        }
+        return len;
+    }
+
+
 };
 
 #endif //DATASTRUCT_3_LENGTHOFLONGESTSUBSTRING_H
