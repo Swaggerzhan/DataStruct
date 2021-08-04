@@ -1,25 +1,26 @@
 #include <iostream>
 #include "LeetCode/20_isValid.h"
+#include "Sort/heapSort.h"
+
+using std::endl;
+using std::cout;
 
 int main(int argc, char** args) {
 
 
-//    Solution s;
-//    string s1 = "abcdefa";
-//
-//    std::cout << s.lengthOfLongestSubstring(s1) << std::endl;
-//
-//    std::vector<int> test = {3, 2, 1, 5 ,6 ,4};
-//    Solution s;
-//    std::cout << s.findKthLargest(test, 2) << std::endl;
-//
-//    for (int tmp : test){
-//        std::cout << tmp << " ";
-//    }
-//    std::cout << std::endl;
+    int n = 20;
 
-    Solution s;
-    std::cout << s.isValid("((") << std::endl;
+    Heap heap(n);
+
+    for (int i=0; i<n; i++){
+        int rand_ = rand() % 100;
+        heap.insert(rand_);
+    }
+
+    for (int i=0; i<n; i++){
+        cout << heap.pop() << endl;
+    }
+
 
 
 
