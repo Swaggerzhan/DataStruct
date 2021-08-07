@@ -24,5 +24,5 @@ add_executable(DataStruct main.cpp
         LeetCode/47_findCombination.h
         LeetCode/53_maxSubArray.h
 
-        acm/permu.h acm/isbn.h Sort/quickSort.h Sort/sortHelper.h LeetCode/912_sort.h LeetCode/1_addTwo.h LeetCode/3_lengthOfLongestSubstring.h LeetCode/2_addTwoNumbers.h LeetCode/226_invertTree.h LeetCode/236_lowestCommonAncestor.h LeetCode/88_merge.h LeetCode/232_MyQueue.h Offer/22_getKthFromEnd.h LeetCode/20_isValid.h Sort/heapSort.h)
+        acm/permu.h acm/isbn.h Sort/quickSort.h Sort/sortHelper.h LeetCode/912_sort.h LeetCode/1_addTwo.h LeetCode/3_lengthOfLongestSubstring.h LeetCode/2_addTwoNumbers.h LeetCode/226_invertTree.h LeetCode/236_lowestCommonAncestor.h LeetCode/88_merge.h LeetCode/232_MyQueue.h Offer/22_getKthFromEnd.h LeetCode/20_isValid.h Sort/heapSort.h Graph/denseGraph.h Graph/denseGraph.cpp Graph/sparseGraph.h Graph/sparseGraph.cpp)
 
