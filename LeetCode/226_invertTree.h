@@ -20,6 +20,22 @@ public:
         invertTree(root->right);
         return root;
     }
+
+
+
+    TreeNode* reWrite(TreeNode* root){
+
+        if ( !root )
+            return nullptr;
+
+        TreeNode* tmp = root->left;
+        root->left = root->right;
+        root->right = tmp;
+        reWrite(root->left);
+        reWrite(root->right);
+        return root;
+
+    }
 };
 
 

@@ -23,6 +23,39 @@ public:
             return root;
         return left ? left : right;
     }
+
+
+
+    TreeNode* reWrite(TreeNode* root, TreeNode* p, TreeNode* q){
+
+        if ( !root )
+            return nullptr;
+
+        if ( root == p || root == q)
+            return root;
+
+        TreeNode* left_scan  = reWrite(root, p, q);
+        TreeNode* right_scan = reWrite(root, p, q);
+
+        if ( !left_scan && !right_scan )
+            return nullptr;
+
+        if ( left_scan && right_scan )
+            return root;
+
+        return left_scan ? left_scan : right_scan;
+
+
+    }
 };
 
 #endif //DATASTRUCT_236_LOWESTCOMMONANCESTOR_H
+
+
+
+
+
+
+
+
+

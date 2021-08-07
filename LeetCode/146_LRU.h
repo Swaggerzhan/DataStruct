@@ -8,9 +8,10 @@
 #include <map>
 #include <ctime>
 
+using std::endl;
+using std::cout;
 
-
-class LRUCache {
+class LRUCache2 {
 
 private:
 
@@ -39,7 +40,7 @@ private:
 
 public:
 
-    LRUCache(int capacity):capacity(capacity) {
+    LRUCache2(int capacity):capacity(capacity) {
         this->count = 0;
     }
 
@@ -141,91 +142,123 @@ class LRU{
 public:
 
     struct Node{
-
         Node(int key, int value)
-        :   key_(key),
-            value_(value),
-            next(nullptr),
-            pre(nullptr)
-            {}
+        :   key(key),
+            value(value),
+            pre(nullptr),
+            next(nullptr)
+        {
 
-        int key_;
-        int value_;
+        }
 
-        struct Node* pre;
-        struct Node* next;
+        int key;
+        int value;
+
+        Node* pre;
+        Node* next;
     };
 
 
+public:
+
     LRU(int capacity)
     :   capacity_(capacity),
+        head_(nullptr),
+        tail_(nullptr),
         size_(0)
     {
 
     }
 
-    int get(int key) {
-        auto it = map_.find(key);
-        if ( it == map_.end() )
-            return -1;
-        update(it->second);
-        return it->second->value_;
+    ~LRU(){
+        Node* tmp = head_;
+        while ( tmp ){
+            if ( tmp == tail_ )
+                break;
+            Node* delNode = tmp;
+            tmp = tmp->next;
+            delete delNode;
+        }
+        delete tail_;
     }
 
-    void put(int key, int value) {
-        if ( get(key) == -1){ // 不存在，真正的put
-            if ( size_ >= capacity_ ){
-                auto it = map_.find(tail_->key_);
-                Node* curNode = it->second;
-                Node* preNode = curNode->pre;
-                map_.erase(it);
-                size_ --;
-                /* 只有一个元素的应该没有人会搞吧? */
-                preNode->next = nullptr;
-                delete curNode;
-            }
-            size_ ++;
+    int get(int key){
+        auto iter = map_.find(key);
+        if ( iter == map_.end() )
+            return -1;
+
+        int ret = iter->second->value;
+        update(iter->second);
+        return ret;
+    }
+
+    void put(int key, int value){
+        // 更新
+        if ( get(key) != -1 ){
+            auto iter = map_.find(key);
+            iter->second->value = value;
+        }else {
             Node* node = new Node(key, value);
-            map_.insert( std::pair<int, Node*>(key, node));
-            if ( head_ ){
-                Node* tmp = head_;
-                head_ = node;
-                node->next = tmp;
-                tmp->pre = node;
-            }else {
-                head_ = node;
-                tail_ = node;
+            if ( isFull() ){ // 已满
+                map_.erase(tail_->key);
+                deleteNode(tail_, true);
             }
-        }else{ // 更新即可
-            auto it = map_.find(key);
-            it->second->value_ = value;
+            map_.insert(std::pair<int, Node*>(key, node));
+            insertToList(node);
+
         }
+    }
+
+
+    bool isFull(){
+        return size_ >= capacity_;
     }
 
 private:
 
-    void update(Node* node){
-        if (node == head_ ){
-            return;
-        }
-        if (node == tail_ ){
-            Node* preNode = tail_->pre;
-            preNode->next = nullptr;
-            Node* tmp = head_;
+    void insertToList(Node* node){
+        if ( size_ == 0 ){
             head_ = node;
-            node->next = tmp;
-            tmp->pre = node;
-            return;
+            tail_ = node;
+        }else if ( size_ == 1 ){
+            node->next = head_;
+            head_->pre = node;
+            head_ = node;
+            tail_ = head_->next;
+        }else {
+            node->next = head_;
+            head_->pre = node;
+            head_ = node;
         }
-        Node* preNode = node->pre;
-        Node* nextNode = node->next;
-        preNode->next = nextNode;
-        nextNode->pre = preNode;
+        size_ ++;
+    }
 
-        Node* tmp = head_;
-        head_ = node;
-        node->next = tmp;
-        tmp->pre = node;
+    void deleteNode(Node* node, bool del){
+        if ( node == head_ ){
+            head_ = head_->next;
+            if (del)
+                delete node;
+        }else if ( node == tail_ ){
+            tail_ = tail_->pre;
+            if (del)
+                delete node;
+        }else {
+            Node* preNode  = node->pre;
+            Node* nextNode = node->next;
+            preNode->next = nextNode;
+            nextNode->pre = preNode;
+            if (del)
+                delete node;
+        }
+        size_ --;
+    }
+
+    void update(Node* node){
+
+        if ( node == head_ )
+            return;
+        deleteNode(node, false);
+        insertToList(node);
     }
 
 
@@ -233,12 +266,10 @@ private:
 
     std::map<int, Node*> map_;
 
-    int capacity_;              // 总容量
-    int size_;
-
     Node* head_;
     Node* tail_;
-
+    int capacity_;
+    int size_;
 
 };
 

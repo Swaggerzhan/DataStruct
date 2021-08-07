@@ -13,14 +13,22 @@ class Solution {
 public:
 
     bool dfs(TreeNode* left, TreeNode* right){
-        /* 都为空则直接返回true */
-        if ( !left && !right )
+
+        if ( !left && !right)
             return true;
-        /* 其中一个为空那么就直接返回false */
-        if ( !left || !right )
+
+        if ( !(left && right) )
             return false;
+
+        if ( left->val != right->val )
+            return false;
+
         return dfs(left->left, right->right) &&
             dfs(left->right, right->left);
+
+
+
+
     }
 
 
