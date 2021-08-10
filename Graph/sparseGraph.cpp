@@ -91,16 +91,21 @@ int SparseGraph::Iter::begin() {
     return G_.graph_[vertex_][0];
 }
 
-
-void SparseGraph::Iter::operator++() {
-    index_ += 1;
-}
-
-int SparseGraph::Iter::operator*() {
-    if ( index_ <= G_.graph_[vertex_].size() )
+int SparseGraph::Iter::next() {
+    index_ ++;
+    if ( index_ < G_.graph_[vertex_].size() ){
         return G_.graph_[vertex_][index_];
+    }
     return -1;
 }
 
+
+bool SparseGraph::Iter::end() {
+    return index_ >= G_.graph_[vertex_].size();
+}
+
+SparseGraph::Iter::~Iter() {
+
+}
 
 

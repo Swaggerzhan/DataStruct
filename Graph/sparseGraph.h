@@ -34,8 +34,7 @@ public:
 
         int begin();
         bool end();
-        void operator++();
-        int operator*();
+        int next();
 
 
     private:
