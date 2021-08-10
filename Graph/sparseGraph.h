@@ -20,6 +20,30 @@ public:
     bool hasEdge(int v, int w);
 
     void addEdge(int v, int w);
+    int getEdge();
+    int getVertex();
+
+    /* 打印SparseGraph图 */
+    void show();
+
+    class Iter{
+    public:
+        /* 一个图的v顶点的迭代器 */
+        Iter(SparseGraph& g, int v);
+        ~Iter();
+
+        int begin();
+        bool end();
+        void operator++();
+        int operator*();
+
+
+    private:
+        SparseGraph& G_;
+        int index_;             // 当前遍历index
+        int vertex_;            // 顶点
+    };
+
 
 private:
 
@@ -27,7 +51,7 @@ private:
     bool isDirect_;
     int edge_;
 
-    vector<vector<int>> graph_;
+    vector<vector<int> > graph_;
 
 
 };

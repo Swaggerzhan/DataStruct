@@ -3,6 +3,10 @@
 //
 #include "sparseGraph.h"
 #include <cassert>
+#include <iostream>
+
+using std::endl;
+using std::cout;
 
 SparseGraph::SparseGraph(int vertex_, bool isDirect)
 :   vertex_(vertex_),
@@ -19,6 +23,10 @@ SparseGraph::~SparseGraph() {
 
 }
 
+
+int SparseGraph::getEdge() { return edge_; }
+
+int SparseGraph::getVertex() { return vertex_; }
 
 bool SparseGraph::hasEdge(int v, int w) {
 
@@ -48,4 +56,51 @@ void SparseGraph::addEdge(int v, int w) {
     }
 
 }
+
+
+void SparseGraph::show() {
+
+    for (int i=0; i<vertex_; i++){
+        cout << "vertex: " << i << ": \t";
+        for (int j=0; j<graph_[i].size(); j++){
+            cout << graph_[i][j] << "\t";
+        }
+        cout << endl;
+    }
+
+}
+
+/////////////////////////////////////////////////////////
+/// 迭代器
+
+
+SparseGraph::Iter::Iter(SparseGraph &g, int v)
+:   G_(g),
+    index_(0),
+    vertex_(v)
+{
+
+}
+
+
+int SparseGraph::Iter::begin() {
+    index_ = 0;
+    if ( G_.graph_[vertex_].empty() ){
+        return -1; // 没有数据
+    }
+    return G_.graph_[vertex_][0];
+}
+
+
+void SparseGraph::Iter::operator++() {
+    index_ += 1;
+}
+
+int SparseGraph::Iter::operator*() {
+    if ( index_ <= G_.graph_[vertex_].size() )
+        return G_.graph_[vertex_][index_];
+    return -1;
+}
+
+
 
