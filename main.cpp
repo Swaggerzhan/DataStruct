@@ -1,20 +1,36 @@
 #include <iostream>
-#include "LeetCode/93_restoreIpAddresses.h"
-#include "interview/atoi.h"
-#include "interview/quicksort.h"
-#include "interview/mergeSort.h"
+#include "LockFree/LockFreeQueue.h"
+#include <thread>
 
 using std::endl;
 using std::cout;
 using std::string;
 
+Queue q;
+
+void put(){
+    int i = 0;
+    for (;;) {
+        q.puts(i);
+        i ++;
+    }
+}
+
+void get(){
+    for (;;) {
+        int ret = q.get();
+        if ( ret != -1 ){
+            std::cout << ret << std::endl;
+        }
+    }
+}
 
 
 int main(int argc, char** args) {
-    int arr[] = {10, 2, 3, 6, 1, 4, 7, 9, 8, 5};
-    mergeSort(arr, 0, 9);
-    for (int i=0; i<10; i++) {
-        std::cout << arr[i]  << " ";
-    }
-    std::cout << std::endl;
+    std::thread t1(put);
+    std::thread t2(get);
+    t1.join();
+    t2.join();
+
+
 }
